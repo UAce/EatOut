@@ -10,16 +10,16 @@ import android.view.ViewGroup;
  * Created by yu-yu on 2017-09-30.
  */
 
-public class Fragment1 extends Fragment {
+public class Pay_Logs extends Fragment {
 
     //Constructor
-    public Fragment1(){};
+    public Pay_Logs(){};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View Fragment1 = inflater.inflate(R.layout.frag1, container, false);
+        View pay_logs = inflater.inflate(R.layout.Pay_Logs, container, false);
 
-        return Fragment1;
+        return pay_logs;
     }
 
 }

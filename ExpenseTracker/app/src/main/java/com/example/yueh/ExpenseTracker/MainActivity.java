@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
         public Fragment getItem(int position) {
             switch(position) {
                 case 0:
-                    return new Fragment1();
+                    return new Pay_Logs();
                 case 1:
                     return new Fragment2();
                 case 2:
