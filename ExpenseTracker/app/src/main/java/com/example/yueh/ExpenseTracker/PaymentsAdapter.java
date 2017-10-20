@@ -36,6 +36,7 @@ public class PaymentsAdapter extends ArrayAdapter<Payment> {
         pRes.setText("Restaurant: "+payment.getRestaurant());
         pAmt.setText("Price: "+Double.toString(payment.getAmount()));
 
+
         // Return the completed view to render on screen
         return convertView;
     }

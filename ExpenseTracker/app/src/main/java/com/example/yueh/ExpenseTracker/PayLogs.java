@@ -32,6 +32,7 @@ public class PayLogs extends Fragment {
         PaymentsAdapter adapter = new PaymentsAdapter(getActivity(), arrayOfpayments);
         // Attach the adapter to a ListView
         ListView listView = (ListView) payLogsView.findViewById(R.id.lvItems);
+        listView.setEmptyView( payLogsView.findViewById( R.id.empty) );
         listView.setAdapter(adapter);
         Payment newPay = new Payment("Bob", 15.5, "NUDO");
         Payment newPay2 = new Payment("Alice", 25, "Atti");
