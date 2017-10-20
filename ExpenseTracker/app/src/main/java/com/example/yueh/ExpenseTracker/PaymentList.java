@@ -6,21 +6,26 @@ import java.util.ArrayList;
  * Created by yu-yu on 2017-09-29.
  */
 
-public class PaymentModel {
+public class PaymentList {
     public interface onPaymentAddedListener{
-        //public void onPaymentAdded(PaymentModel model, Payment[] payments)
+        //public void onPaymentAdded(PaymentList model, Payment[] payments)
         public void onPaymentAdded(Payment[] payments);
     }
 
     ArrayList<Payment> payments = null;
     onPaymentAddedListener _paymentsAddedListener = null;
 
-    public PaymentModel(){
+    public PaymentList(){
         //TODO: make payment persistent..
         payments = new ArrayList<Payment>();
 
         //Schedule Polling of payment
     }
+
+    public ArrayList<Payment> getPayments(){
+        return payments;
+    }
+
     public int getCount(){
         return payments.size();
     }

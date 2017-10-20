@@ -4,6 +4,7 @@ package com.example.yueh.ExpenseTracker;
  * Created by yu-yu on 2017-09-29.
  */
 
+//Payment Model
 public class Payment {
     private String name;
     private double amount;

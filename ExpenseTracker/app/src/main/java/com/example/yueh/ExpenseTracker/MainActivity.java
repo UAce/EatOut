@@ -9,13 +9,16 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements ListAdapter, PaymentModel.onPaymentAddedListener {
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity implements ListAdapter, PaymentList.onPaymentAddedListener {
 
     TabLayout MyTabs;
     ViewPager MyPage;
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
     ListView _paymentListView = null;
 
     //Data model
-    PaymentModel _paymentModel = null;
+    PaymentList _paymentModel = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
 
 /*
         //Create data Model
-        _paymentModel = new PaymentModel();
+        _paymentModel = new PaymentList();
         Payment p1 = new Payment("Jennie", 22, "Momo");
         Payment p2 = new Payment("Yueh", 16.5, "A&W");
         Payment p3 = new Payment("Jennie", 9.75, "Mcdonald's");
@@ -49,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
 */
 
         setContentView(R.layout.activity_main);
-      /*  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar); */
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //Hook ViewPager up to pagerAdapter
         MyPage = (ViewPager) findViewById(R.id.MyPage);
@@ -62,6 +65,13 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
         MyTabs = (TabLayout) findViewById(R.id.MyTabs);
         MyTabs.setupWithViewPager(MyPage);
 
+//        // Construct the data source
+//        ArrayList<Payment> arrayOfpayments = new ArrayList<Payment>();
+//        // Create the adapter to convert the array to views
+//        PaymentsAdapter adapter = new PaymentsAdapter(this, arrayOfpayments);
+//        // Attach the adapter to a ListView
+//        ListView listView = (ListView) findViewById(R.id.lvItems);
+//        listView.setAdapter(adapter);
     }
 
     public class MyViewPageAdapter extends FragmentPagerAdapter{
@@ -78,9 +88,9 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
         public Fragment getItem(int position) {
             switch(position) {
                 case 0:
-                    return new Pay_Logs();
+                    return new PayLogs();
                 case 1:
-                    return new Fragment2();
+                    return new Home();
                 case 2:
                     return new Fragment3();
                 default:

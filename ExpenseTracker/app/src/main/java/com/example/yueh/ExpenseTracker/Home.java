@@ -9,17 +9,17 @@ import android.view.ViewGroup;
 /**
  * Created by yu-yu on 2017-09-30.
  */
-
-public class Pay_Logs extends Fragment {
+//Fragment 2 -> home.xml
+public class Home extends Fragment {
 
     //Constructor
-    public Pay_Logs(){};
+    public Home(){};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View pay_logs = inflater.inflate(R.layout.Pay_Logs, container, false);
+        View homeView = inflater.inflate(R.layout.home, container, false);
 
-        return pay_logs;
+        return homeView;
     }
 
 }

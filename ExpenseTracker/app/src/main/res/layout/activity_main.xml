@@ -16,10 +16,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
+            android:background="@color/Green"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
             <ImageView
                 android:id="@+id/searchIcon"
                 android:layout_width="wrap_content"
@@ -37,11 +38,12 @@
             android:id="@+id/MyTabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/white"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/white"/>
+            app:tabTextColor="@color/gray"
+            app:tabIndicatorColor="@color/Green"
+            app:tabSelectedTextColor="@color/Green"/>
 
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
