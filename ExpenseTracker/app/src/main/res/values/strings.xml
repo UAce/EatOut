@@ -3,6 +3,11 @@
     <string name="Fragment1_title">My Expenses</string>
     <string name="Fragment2_title">Frag2</string>
     <string name="Fragment3_title">Frag3</string>
+    <string name="resto">Restaurant Name</string>
+    <string name="buyer">Who Paid?</string>
+    <string name="amt">How much?</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

@@ -9,11 +9,13 @@ public class Payment {
     private String name;
     private double amount;
     private String restaurant;
+    private String comment;
 
-    public Payment(String name, double amt, String res){
+    public Payment(String name, double amt, String res, String com){
         this.name=name;
         this.amount=amt;
         this.restaurant=res;
+        this.comment=com;
     }
 
     public String getName(){
@@ -40,4 +42,11 @@ public class Payment {
         this.restaurant=res;
     }
 
+    public String getComment(){
+        return comment;
+    }
+
+    public void setComment(String com){
+        this.comment=com;
+    }
 }

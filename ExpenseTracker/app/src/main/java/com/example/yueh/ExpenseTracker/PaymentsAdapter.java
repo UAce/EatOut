@@ -32,9 +32,9 @@ public class PaymentsAdapter extends ArrayAdapter<Payment> {
         TextView pRes = (TextView) convertView.findViewById(R.id.pRes);
         TextView pAmt = (TextView) convertView.findViewById(R.id.pAmt);
         // Populate the data into the template view using the data object
-        pName.setText("Name: "+payment.getName());
-        pRes.setText("Restaurant: "+payment.getRestaurant());
-        pAmt.setText("Price: "+Double.toString(payment.getAmount()));
+        pName.setText("Paid: "+payment.getName());
+        pRes.setText(payment.getRestaurant());
+        pAmt.setText(Double.toString(payment.getAmount())+"$");
 
 
         // Return the completed view to render on screen
