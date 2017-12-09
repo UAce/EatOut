@@ -10,18 +10,20 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity implements ListAdapter, PaymentList.onPaymentAddedListener {
 
     TabLayout MyTabs;
     ViewPager MyPage;
+    private PayLogs fragment1;
+    private Fragment2 fragment2;
+    private Fragment3 fragment3;
 
     //View
     ListView _paymentListView = null;
@@ -57,27 +59,26 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
 
         //Hook ViewPager up to pagerAdapter
         MyPage = (ViewPager) findViewById(R.id.MyPage);
-        PagerAdapter pagerAdapter =
-                new MyViewPageAdapter(getSupportFragmentManager());
+        // TEMPORARY SOLUTION TO AVOID SAVING STATES
+        MyPage.setOffscreenPageLimit(3);
+        PagerAdapter pagerAdapter = new MyViewPageAdapter(getSupportFragmentManager());
         MyPage.setAdapter(pagerAdapter);
 
         //Hook up TabLayout
         MyTabs = (TabLayout) findViewById(R.id.MyTabs);
         MyTabs.setupWithViewPager(MyPage);
-
-//        // Construct the data source
-//        ArrayList<Payment> arrayOfpayments = new ArrayList<Payment>();
-//        // Create the adapter to convert the array to views
-//        PaymentsAdapter adapter = new PaymentsAdapter(this, arrayOfpayments);
-//        // Attach the adapter to a ListView
-//        ListView listView = (ListView) findViewById(R.id.lvItems);
-//        listView.setAdapter(adapter);
     }
 
+    //
+    // ViewPagerAdapter
+    //
     public class MyViewPageAdapter extends FragmentPagerAdapter{
         public MyViewPageAdapter(FragmentManager fm){
             super(fm);
         }
+
+        // Array of fragments to cache?
+        private final SparseArray<Fragment> registeredFragments = new SparseArray<>();
 
         @Override
         public int getCount() {
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
                 case 0:
                     return new PayLogs();
                 case 1:
-                    return new Home();
+                    return new Fragment2();
                 case 2:
                     return new Fragment3();
                 default:
@@ -112,9 +113,49 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
             }
         }
 
+        // Here we can finally safely save a reference to the created
+        // Fragment, no matter where it came from (either getItem() or
+        // FragmentManger). Simply save the returned Fragment from
+        // super.instantiateItem() into an appropriate reference depending
+        // on the ViewPager position.
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            Fragment createdFragment = (Fragment) super.instantiateItem(container, position);
+            // save the appropriate reference depending on position
+            switch (position) {
+                case 0:
+                    fragment1 = (PayLogs) createdFragment;
+                    break;
+                case 1:
+                    fragment2 = (Fragment2) createdFragment;
+                    break;
+                case 2:
+                    fragment3 = (Fragment3) createdFragment;
+                    break;
+            }
+            return createdFragment;
+        }
+
+        // Possibly useful methods for caching fragments??
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            registeredFragments.remove(position);
+            super.destroyItem(container, position, object);
+        }
+
+        public Fragment getRegisteredFragment(int position) {
+            return registeredFragments.get(position);
+        }
+
+        public SparseArray<Fragment> getRegisteredFragments() {
+            return registeredFragments;
+        }
     }
 
+
+    //
     // Android.widget.listAdapter methods
+    //
     @Override
     public boolean isEmpty() {
         return false;

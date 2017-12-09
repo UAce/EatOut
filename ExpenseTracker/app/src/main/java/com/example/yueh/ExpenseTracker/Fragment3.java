@@ -2,6 +2,7 @@ package com.example.yueh.ExpenseTracker;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.ListViewAutoScrollHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
  */
 
 public class Fragment3 extends Fragment {
+    //Id to identify Fragment
+    int fragmentId;
 
     //Constructor
     public Fragment3(){};

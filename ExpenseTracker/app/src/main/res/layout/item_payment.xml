@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/itemBg">
+
 
     <TextView
         android:id="@+id/pRes"
@@ -10,9 +12,10 @@
         android:layout_height="wrap_content"
         android:text="Restaurant"
         android:textStyle="bold"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/imageView" />
 
@@ -21,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
-        android:textSize="15dp"
+        android:textSize="14dp"
         android:layout_alignBaseline="@+id/pAmt"
         android:layout_alignBottom="@+id/pAmt"
         android:layout_alignStart="@+id/pCmt" />
@@ -30,21 +33,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Amount"
-        android:textSize="17dp"
+        android:textSize="15dp"
         android:textStyle="bold"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/pCmt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Comment"
-        android:layout_above="@+id/pAmt"
+        android:textSize="12dp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
         android:layout_alignStart="@+id/pRes"
-        android:layout_marginBottom="12dp" />
+        android:text="Comment"
+        android:layout_below="@+id/pRes"
+        android:layout_alignEnd="@+id/pAmt"
+        android:layout_above="@+id/pAmt" />
 
     <ImageView
         android:layout_width="100dp"

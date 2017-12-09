@@ -9,17 +9,19 @@ import android.view.ViewGroup;
 /**
  * Created by yu-yu on 2017-09-30.
  */
-//Fragment 2 -> home.xml
-public class Home extends Fragment {
+//Fragment 2 -> frag2.xmll
+public class Fragment2 extends Fragment {
+    //Id to identify Fragment
+    int fragmentId;
 
     //Constructor
-    public Home(){};
+    public Fragment2(){};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View homeView = inflater.inflate(R.layout.home, container, false);
+        View frag2View = inflater.inflate(R.layout.frag2, container, false);
 
-        return homeView;
+        return frag2View;
     }
 
 }
