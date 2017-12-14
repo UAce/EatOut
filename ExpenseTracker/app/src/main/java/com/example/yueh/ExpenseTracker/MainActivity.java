@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
 /*
         //Create data Model
         _paymentModel = new PaymentList();
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
 
         //Hook ViewPager up to pagerAdapter
         MyPage = (ViewPager) findViewById(R.id.MyPage);
+
         // TEMPORARY SOLUTION TO AVOID SAVING STATES
         MyPage.setOffscreenPageLimit(3);
         PagerAdapter pagerAdapter = new MyViewPageAdapter(getSupportFragmentManager());

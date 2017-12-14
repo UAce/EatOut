@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -12,49 +13,79 @@
         android:background="#FFFFBB33"
         android:contentDescription="@string/app_name" /> -->
 
-    <EditText
-        android:id="@+id/resto"
-        android:inputType="textCapWords|textAutoCorrect"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout_resto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="6dp"
-        android:hint="@string/resto" />
-    <EditText
-        android:id="@+id/buyer"
-        android:inputType="textCapWords"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="6dp"
-        android:fontFamily="sans-serif"
-        android:hint="@string/buyer"/>
-    <EditText
-        android:id="@+id/amt"
-        android:inputType="numberDecimal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="sans-serif"
-        android:hint="@string/amt"/>
+        android:layout_height="60dp"
+        app:errorEnabled="false">
 
-    <EditText
-        android:id="@+id/Cmt"
-        android:inputType="textCapSentences"
-        android:background="@drawable/comment_textbox"
-        android:layout_width="match_parent"
-        android:gravity="top"
-        android:layout_height="100dp"
-        android:layout_marginLeft="4dp"
-        android:fontFamily="sans-serif"
-        android:hint="@string/cmt"/>
+        <EditText
+            android:id="@+id/resto"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/resto"
+            android:inputType="textCapWords|textAutoCorrect" />
+    </android.support.design.widget.TextInputLayout>
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout_buyer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:errorEnabled="false">
+
+        <EditText
+            android:id="@+id/buyer"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:hint="@string/buyer"
+            android:inputType="textCapWords" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout_amt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:errorEnabled="false">
+
+        <EditText
+            android:id="@+id/amt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:hint="@string/amt"
+            android:inputType="numberDecimal" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/text_input_layout_cmt"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        app:errorEnabled="false">
+
+        <EditText
+            android:id="@+id/Cmt"
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/comment_textbox"
+            android:fontFamily="sans-serif"
+            android:gravity="top"
+            android:hint="@string/cmt"
+            android:inputType="textCapSentences" />
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>
