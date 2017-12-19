@@ -35,23 +35,6 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-/*
-        //Create data Model
-        _paymentModel = new PaymentList();
-        Payment p1 = new Payment("Jennie", 22, "Momo");
-        Payment p2 = new Payment("Yueh", 16.5, "A&W");
-        Payment p3 = new Payment("Jennie", 9.75, "Mcdonald's");
-        _paymentModel.addPayment(p1);
-        _paymentModel.addPayment(p2);
-        _paymentModel.addPayment(p3);
-
-        //Create view hierarchy
-        _paymentListView = new ListView(this);
-        _paymentListView.setAdapter(this);
-        //setContentView(_paymentListView);
-        _paymentModel.setOnPaymentAddedListener(this);
-*/
-
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -113,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements ListAdapter, Paym
             }
         }
 
-        // Here we can finally safely save a reference to the created
-        // Fragment, no matter where it came from (either getItem() or
+        // Safely save a reference to the created Fragment,
+        // no matter where it came from (either getItem() or
         // FragmentManger). Simply save the returned Fragment from
         // super.instantiateItem() into an appropriate reference depending
         // on the ViewPager position.

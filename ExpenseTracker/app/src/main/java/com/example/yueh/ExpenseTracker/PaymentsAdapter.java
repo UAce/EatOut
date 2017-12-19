@@ -16,9 +16,11 @@ import java.util.ArrayList;
 public class PaymentsAdapter extends ArrayAdapter<Payment> {
     //Position of List element
     private int position;
+    private ArrayList<Payment> myExpenses;
 
-    public PaymentsAdapter(Context context, ArrayList<Payment> users) {
-        super(context, 0, users);
+    public PaymentsAdapter(Context context, ArrayList<Payment> paymentList) {
+        super(context, 0, paymentList);
+        myExpenses = paymentList;
     }
 
     @Override
@@ -50,5 +52,9 @@ public class PaymentsAdapter extends ArrayAdapter<Payment> {
     public void selectedItem(int position)
     {
         this.position = position; //position must be a global variable
+    }
+
+    public void setMyExpense(Payment newP, int position){
+        myExpenses.set(position,newP);
     }
 }
