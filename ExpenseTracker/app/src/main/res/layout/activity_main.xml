@@ -31,14 +31,15 @@
             android:id="@+id/MyTabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:tabTextColor="@color/gray"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabSelectedTextColor="@color/colorPrimary"
             app:tabMode="fixed"
             app:tabGravity="fill"/>
+            <!--I removed this from above-->
+            <!--android:background="@color/white"-->
+            <!--app:tabTextColor="@color/gray"-->
+            <!--app:tabIndicatorColor="@color/colorPrimary"-->
+            <!--app:tabSelectedTextColor="@color/colorPrimary"-->
 
     </android.support.design.widget.AppBarLayout>
     <!--<include layout="@layout/content_main"/>-->
