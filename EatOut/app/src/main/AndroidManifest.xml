@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.yueh.ExpenseTracker">
+    package="com.example.yueh.EatOut">
 <!-- <android.support.v4.view.ViewPager
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pager"
@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_eatout"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.yueh.EatOut.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

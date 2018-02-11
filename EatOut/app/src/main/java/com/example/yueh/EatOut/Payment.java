@@ -1,4 +1,4 @@
-package com.example.yueh.ExpenseTracker;
+package com.example.yueh.EatOut;
 
 /**
  * Created by yu-yu on 2017-09-29.

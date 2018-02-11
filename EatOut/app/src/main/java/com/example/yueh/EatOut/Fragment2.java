@@ -1,4 +1,4 @@
-package com.example.yueh.ExpenseTracker;
+package com.example.yueh.EatOut;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

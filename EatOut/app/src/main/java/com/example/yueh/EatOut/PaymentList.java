@@ -1,4 +1,4 @@
-package com.example.yueh.ExpenseTracker;
+package com.example.yueh.EatOut;
 
 import java.util.ArrayList;
 
