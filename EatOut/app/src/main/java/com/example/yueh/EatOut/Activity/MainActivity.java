@@ -1,4 +1,4 @@
-package com.example.yueh.EatOut;
+package com.example.yueh.EatOut.Activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -9,6 +9,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.example.yueh.EatOut.Fragment.Fragment2;
+import com.example.yueh.EatOut.Fragment.Fragment3;
+import com.example.yueh.EatOut.Fragment.ExpenseLog;
+import com.example.yueh.EatOut.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager MyPage;
     Toolbar MyToolbar;
 
-    private PayLogs fragment1;
+    private ExpenseLog fragment1;
     private Fragment2 fragment2;
     private Fragment3 fragment3;
 
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         MyViewPageAdapter adapter = new MyViewPageAdapter(getSupportFragmentManager());
-        adapter.addFrag(new PayLogs(), "ONE");
+        adapter.addFrag(new ExpenseLog(), "ONE");
         adapter.addFrag(new Fragment2(), "TWO");
         adapter.addFrag(new Fragment3(), "THREE");
         viewPager.setAdapter(adapter);

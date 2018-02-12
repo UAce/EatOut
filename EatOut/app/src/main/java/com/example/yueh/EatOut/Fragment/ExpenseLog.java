@@ -1,4 +1,4 @@
-package com.example.yueh.EatOut;
+package com.example.yueh.EatOut.Fragment;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -19,13 +19,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.yueh.EatOut.Payment;
+import com.example.yueh.EatOut.PaymentsAdapter;
+import com.example.yueh.EatOut.R;
+
 import java.util.ArrayList;
 
 /**
  * Created by yu-yu on 2017-09-30.
  */
-//Fragment 1 -> paylogs.xml
-public class PayLogs extends Fragment {
+//Fragment 1 -> expense_log.xml.xml
+public class ExpenseLog extends Fragment {
     //Id to identify Fragment
     int fragmentId;
     final String dialogName = "New Expenses";
@@ -36,7 +40,7 @@ public class PayLogs extends Fragment {
     ArrayList<Payment> arrayOfpayments;
 
     //Constructor
-    public PayLogs(){};
+    public ExpenseLog(){};
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -44,7 +48,7 @@ public class PayLogs extends Fragment {
 
         //Inflate the layout for this fragment
         //Layout contains my view list
-        final View payLogsView = inflater.inflate(R.layout.paylogs, container, false);
+        final View payLogsView = inflater.inflate(R.layout.expense_log, container, false);
 
         // Construct the data source
         arrayOfpayments = new ArrayList<Payment>();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yueh.EatOut.MainActivity">
+    tools:context="com.example.yueh.EatOut.Activity.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -42,11 +42,14 @@
             <!--app:tabSelectedTextColor="@color/colorPrimary"-->
 
     </android.support.design.widget.AppBarLayout>
-    <!--<include layout="@layout/content_main"/>-->
+
     <android.support.v4.view.ViewPager
         android:id="@+id/MyPage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!--To import another layout-->
+    <!--<include layout="@layout/content_main"/>-->
 
 </android.support.design.widget.CoordinatorLayout>
